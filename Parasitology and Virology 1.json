@@ -1,0 +1,35 @@
+{
+  "title": "Pharmacology - Lecture I",
+  "questions": [
+    {
+      "question": "Which organ is primarily responsible for drug metabolism?",
+      "options": [
+        "Heart",
+        "Liver",
+        "Lung",
+        "Kidney"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "Which route of administration is usually the fastest for systemic drug action?",
+      "options": [
+        "Oral",
+        "Intravenous",
+        "Topical",
+        "Rectal"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What is the main purpose of a drug receptor?",
+      "options": [
+        "To store the drug",
+        "To bind the drug and mediate its effect",
+        "To destroy the drug",
+        "To increase blood volume"
+      ],
+      "answer": 1
+    }
+  ]
+}
