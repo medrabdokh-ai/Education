@@ -18,6 +18,7 @@
       background: #f5f7fb;
       color: #1f2937;
       min-height: 100vh;
+      padding-bottom: 30px;
     }
 
     .header {
@@ -28,8 +29,8 @@
     }
 
     .header h1 {
-      font-size: 24px;
-      margin-bottom: 5px;
+      font-size: 25px;
+      margin-bottom: 6px;
     }
 
     .header p {
@@ -54,6 +55,7 @@
       color: #6b7280;
       font-size: 14px;
       margin-bottom: 20px;
+      font-weight: bold;
     }
 
     .question {
@@ -74,27 +76,51 @@
       border-radius: 12px;
       cursor: pointer;
       font-size: 16px;
+      color: #1f2937;
       transition: 0.2s;
     }
 
-    .option:hover {
+    .option:hover:not(:disabled) {
       border-color: #6366f1;
       background: #f8f8ff;
+      transform: translateY(-1px);
     }
 
-    .option.selected {
-      border-color: #6366f1;
-      background: #eef2ff;
+    .option:disabled {
+      cursor: default;
     }
 
     .option.correct {
       border-color: #16a34a;
       background: #dcfce7;
+      color: #166534;
     }
 
     .option.wrong {
       border-color: #dc2626;
       background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .feedback {
+      display: none;
+      margin-top: 15px;
+      padding: 13px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .feedback.correct {
+      display: block;
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .feedback.wrong {
+      display: block;
+      background: #fee2e2;
+      color: #991b1b;
     }
 
     .buttons {
@@ -114,7 +140,7 @@
       color: white;
     }
 
-    .btn:hover {
+    .btn:hover:not(:disabled) {
       opacity: 0.9;
     }
 
@@ -136,6 +162,7 @@
     .result p {
       color: #6b7280;
       margin-bottom: 25px;
+      font-size: 18px;
     }
 
     .loading,
@@ -159,6 +186,10 @@
 
       .option {
         font-size: 15px;
+      }
+
+      .buttons {
+        flex-direction: row;
       }
     }
   </style>
@@ -186,6 +217,8 @@
 
         <div id="options"></div>
 
+        <div id="feedback" class="feedback"></div>
+
         <div class="buttons">
           <button class="btn" id="previousBtn" onclick="previousQuestion()">
             Previous
@@ -200,7 +233,6 @@
 
       <div id="result" class="result" style="display:none;">
         <h2>Exam Completed</h2>
-
         <p id="score"></p>
 
         <button class="btn" onclick="restartQuiz()">
@@ -213,19 +245,18 @@
     </div>
   </div>
 
-
 <script>
 
   let questions = [];
   let currentQuestion = 0;
   let answers = [];
+  let answered = false;
+  let scoreValue = 0;
 
-  // Get the JSON filename from the URL
   const urlParams = new URLSearchParams(window.location.search);
   const bank = urlParams.get("bank");
 
 
-  // Load the JSON file
   async function loadQuiz() {
 
     if (!bank) {
@@ -243,10 +274,21 @@
 
       const data = await response.json();
 
-      // Accept either:
-      // [ {...}, {...} ]
-      // OR
-      // { "questions": [ {...}, {...} ] }
+      /*
+        The JSON can be:
+
+        {
+          "questions": [
+            {
+              "question": "...",
+              "options": ["A", "B", "C", "D"],
+              "correctAnswer": "B"
+            }
+          ]
+        }
+
+        This matches the JSON exam files already created.
+      */
 
       if (Array.isArray(data)) {
         questions = data;
@@ -281,7 +323,6 @@
   }
 
 
-  // Convert filename into a readable title
   function formatExamName(path) {
 
     let name = path.split("/").pop();
@@ -289,15 +330,15 @@
     name = name.replace(".json", "");
     name = name.replace(/-/g, " ");
 
-    return name
-      .replace(/\b\w/g, letter => letter.toUpperCase());
+    return name.replace(/\b\w/g, letter => letter.toUpperCase());
   }
 
 
-  // Show current question
   function showQuestion() {
 
     const question = questions[currentQuestion];
+
+    answered = answers[currentQuestion] !== null;
 
     document.getElementById("progress").textContent =
       `Question ${currentQuestion + 1} of ${questions.length}`;
@@ -310,6 +351,11 @@
 
     optionsContainer.innerHTML = "";
 
+    const feedback =
+      document.getElementById("feedback");
+
+    feedback.className = "feedback";
+    feedback.textContent = "";
 
     question.options.forEach((option, index) => {
 
@@ -322,13 +368,41 @@
 
       button.onclick = () => selectOption(index);
 
-      if (answers[currentQuestion] === index) {
-        button.classList.add("selected");
+      if (answered) {
+        button.disabled = true;
+
+        const correctIndex =
+          getCorrectAnswerIndex(question);
+
+        if (index === correctIndex) {
+          button.classList.add("correct");
+        }
+
+        if (
+          answers[currentQuestion] === index &&
+          index !== correctIndex
+        ) {
+          button.classList.add("wrong");
+        }
       }
 
       optionsContainer.appendChild(button);
-
     });
+
+
+    if (answered) {
+      const correctIndex =
+        getCorrectAnswerIndex(question);
+
+      if (answers[currentQuestion] === correctIndex) {
+        feedback.className = "feedback correct";
+        feedback.textContent = "✓ Correct answer!";
+      } else {
+        feedback.className = "feedback wrong";
+        feedback.textContent =
+          `✗ Incorrect. The correct answer is ${String.fromCharCode(65 + correctIndex)}.`;
+      }
+    }
 
 
     document.getElementById("previousBtn").disabled =
@@ -341,7 +415,6 @@
   }
 
 
-  // Support different JSON option formats
   function getOptionText(option) {
 
     if (typeof option === "string") {
@@ -364,26 +437,136 @@
   }
 
 
-  // Select an answer
+  function getCorrectAnswerIndex(question) {
+
+    let correctAnswer =
+      question.correctAnswer;
+
+    if (correctAnswer === undefined) {
+      correctAnswer = question.answer;
+    }
+
+    if (correctAnswer === undefined) {
+      correctAnswer = question.correct;
+    }
+
+    if (correctAnswer === undefined) {
+      correctAnswer = question.correctIndex;
+    }
+
+
+    if (typeof correctAnswer === "number") {
+
+      if (
+        correctAnswer >= 0 &&
+        correctAnswer < question.options.length
+      ) {
+        return correctAnswer;
+      }
+
+      if (
+        correctAnswer >= 1 &&
+        correctAnswer <= question.options.length
+      ) {
+        return correctAnswer - 1;
+      }
+    }
+
+
+    if (typeof correctAnswer === "string") {
+
+      const trimmed =
+        correctAnswer.trim();
+
+      const upper =
+        trimmed.toUpperCase();
+
+      if (/^[A-D]$/.test(upper)) {
+        return upper.charCodeAt(0) - 65;
+      }
+
+      const numeric =
+        Number(trimmed);
+
+      if (
+        Number.isInteger(numeric) &&
+        numeric >= 1 &&
+        numeric <= question.options.length
+      ) {
+        return numeric - 1;
+      }
+
+      for (let i = 0; i < question.options.length; i++) {
+
+        if (
+          getOptionText(question.options[i]) === trimmed
+        ) {
+          return i;
+        }
+      }
+    }
+
+    return -1;
+  }
+
+
   function selectOption(index) {
 
+    if (answered) {
+      return;
+    }
+
+    const question =
+      questions[currentQuestion];
+
+    const correctIndex =
+      getCorrectAnswerIndex(question);
+
     answers[currentQuestion] = index;
+    answered = true;
 
     const options =
       document.querySelectorAll(".option");
 
-    options.forEach(option => {
-      option.classList.remove("selected");
+    options.forEach((option, optionIndex) => {
+
+      option.disabled = true;
+
+      if (optionIndex === correctIndex) {
+        option.classList.add("correct");
+      }
+
+      if (
+        optionIndex === index &&
+        optionIndex !== correctIndex
+      ) {
+        option.classList.add("wrong");
+      }
     });
 
-    options[index].classList.add("selected");
+
+    const feedback =
+      document.getElementById("feedback");
+
+    if (index === correctIndex) {
+
+      scoreValue++;
+
+      feedback.className = "feedback correct";
+      feedback.textContent = "✓ Correct answer!";
+
+    } else {
+
+      feedback.className = "feedback wrong";
+      feedback.textContent =
+        `✗ Incorrect. The correct answer is ${String.fromCharCode(65 + correctIndex)}.`;
+    }
   }
 
 
-  // Next question
   function nextQuestion() {
 
-    if (answers[currentQuestion] === null) {
+    if (!answered) {
       alert("Please choose an answer first.");
       return;
     }
@@ -391,159 +574,60 @@
     if (currentQuestion < questions.length - 1) {
 
       currentQuestion++;
-
       showQuestion();
 
     } else {
 
       finishQuiz();
-
     }
   }
 
 
-  // Previous question
   function previousQuestion() {
 
     if (currentQuestion > 0) {
 
       currentQuestion--;
-
       showQuestion();
-
     }
   }
 
 
-  // Finish exam
   function finishQuiz() {
-
-    let scoreValue = 0;
-
-    questions.forEach((question, index) => {
-
-      const correctAnswer =
-        getCorrectAnswer(question);
-
-      const userAnswer =
-        answers[index];
-
-      if (isCorrectAnswer(question, userAnswer, correctAnswer)) {
-        scoreValue++;
-      }
-
-    });
-
 
     document.getElementById("quiz").style.display = "none";
 
     document.getElementById("result").style.display = "block";
 
     document.getElementById("score").textContent =
-      `Your score: ${scoreValue} / ${questions.length}`;
+      `Your score: ${scoreValue} / ${questions.length} (${Math.round((scoreValue / questions.length) * 100)}%)`;
   }
 
 
-  // Get correct answer
-  function getCorrectAnswer(question) {
-
-    if (question.correctAnswer !== undefined) {
-      return question.correctAnswer;
-    }
-
-    if (question.answer !== undefined) {
-      return question.answer;
-    }
-
-    if (question.correct !== undefined) {
-      return question.correct;
-    }
-
-    if (question.correctIndex !== undefined) {
-      return question.correctIndex;
-    }
-
-    return null;
-  }
-
-
-  // Check answer
-  function isCorrectAnswer(question, userIndex, correctAnswer) {
-
-    if (correctAnswer === null) {
-      return false;
-    }
-
-    const selectedOption =
-      question.options[userIndex];
-
-    const selectedText =
-      getOptionText(selectedOption);
-
-    // If correct answer is a number
-    if (typeof correctAnswer === "number") {
-
-      // Could be option index
-      if (correctAnswer === userIndex) {
-        return true;
-      }
-
-      // Could be option number starting from 1
-      if (correctAnswer === userIndex + 1) {
-        return true;
-      }
-    }
-
-
-    // If correct answer is a letter
-    if (typeof correctAnswer === "string") {
-
-      const letter =
-        String.fromCharCode(65 + userIndex);
-
-      if (correctAnswer.toUpperCase() === letter) {
-        return true;
-      }
-
-      if (correctAnswer === selectedText) {
-        return true;
-      }
-    }
-
-
-    return false;
-  }
-
-
-  // Restart exam
   function restartQuiz() {
 
     currentQuestion = 0;
-
     answers = new Array(questions.length).fill(null);
+    answered = false;
+    scoreValue = 0;
 
     document.getElementById("result").style.display = "none";
-
     document.getElementById("quiz").style.display = "block";
 
     showQuestion();
   }
 
 
-  // Show error
   function showError(message) {
 
     document.getElementById("loading").style.display = "none";
-
     document.getElementById("quiz").style.display = "none";
-
     document.getElementById("error").style.display = "block";
 
     document.getElementById("error").textContent = message;
   }
 
 
-  // Start
   loadQuiz();
 
 </script>
