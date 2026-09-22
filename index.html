@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Beyond the Imagination</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .subject {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .subject h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .lectures {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 12px;
+        }
+
+        .lecture {
+            text-decoration: none;
+            background: #eef2ff;
+            color: #3730a3;
+            padding: 14px 10px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .lecture:hover {
+            transform: translateY(-3px);
+            background: #e0e7ff;
+        }
+
+        .comprehensive {
+            grid-column: 1 / -1;
+            background: #111827;
+            color: white;
+        }
+
+        .comprehensive:hover {
+            background: #1f2937;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Beyond the Imagination</h1>
+        <p>Pharmacy Educational Exams</p>
+    </header>
+
+
+    <!-- Pharmacology -->
+    <section class="subject">
+
+        <h2>Pharmacology</h2>
+
+        <div class="lectures">
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-01.json">I</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-02.json">II</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-03.json">III</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-04.json">IV</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-05.json">V</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-06.json">VI</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-07.json">VII</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-08.json">VIII</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-09.json">IX</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-10.json">X</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmacology/lecture-11.json">XI</a>
+
+            <a class="lecture comprehensive"
+               href="quiz.html?bank=pharmacology/comprehensive.json">
+                Comprehensive Exam
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- Pharmaceutical -->
+    <section class="subject">
+
+        <h2>Pharmaceutical</h2>
+
+        <div class="lectures">
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmaceutical/lecture-01.json">I</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmaceutical/lecture-02.json">II</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmaceutical/lecture-03.json">III</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmaceutical/lecture-04.json">IV</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmaceutical/lecture-05.json">V</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmaceutical/lecture-06.json">VI</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=pharmaceutical/lecture-07.json">VII</a>
+
+            <a class="lecture comprehensive"
+               href="quiz.html?bank=pharmaceutical/comprehensive.json">
+                Comprehensive Exam
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- Biochemistry -->
+    <section class="subject">
+
+        <h2>Biochemistry</h2>
+
+        <div class="lectures">
+
+            <a class="lecture"
+               href="quiz.html?bank=biochemistry/lecture-01.json">I</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=biochemistry/lecture-02.json">II</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=biochemistry/lecture-03.json">III</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=biochemistry/lecture-04.json">IV</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=biochemistry/lecture-05.json">V</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=biochemistry/lecture-06.json">VI</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=biochemistry/lecture-07.json">VII</a>
+
+            <a class="lecture comprehensive"
+               href="quiz.html?bank=biochemistry/comprehensive.json">
+                Comprehensive Exam
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- Drug Design -->
+    <section class="subject">
+
+        <h2>Drug Design</h2>
+
+        <div class="lectures">
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-01.json">I</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-02.json">II</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-03.json">III</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-04.json">IV</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-05.json">V</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-06.json">VI</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-07.json">VII</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-08.json">VIII</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-09.json">IX</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=drug-design/lecture-10.json">X</a>
+
+            <a class="lecture comprehensive"
+               href="quiz.html?bank=drug-design/comprehensive.json">
+                Comprehensive Exam
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- Phytochemistry -->
+    <section class="subject">
+
+        <h2>Phytochemistry</h2>
+
+        <div class="lectures">
+
+            <a class="lecture"
+               href="quiz.html?bank=phytochemistry/lecture-01.json">I</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=phytochemistry/lecture-02.json">II</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=phytochemistry/lecture-03.json">III</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=phytochemistry/lecture-04.json">IV</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=phytochemistry/lecture-05.json">V</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=phytochemistry/lecture-06.json">VI</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=phytochemistry/lecture-07.json">VII</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=phytochemistry/lecture-08.json">VIII</a>
+
+            <a class="lecture comprehensive"
+               href="quiz.html?bank=phytochemistry/comprehensive.json">
+                Comprehensive Exam
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- Parasitology & Virology -->
+    <section class="subject">
+
+        <h2>Parasitology &amp; Virology</h2>
+
+        <div class="lectures">
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-01.json">I</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-02.json">II</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-03.json">III</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-04.json">IV</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-05.json">V</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-06.json">VI</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-07.json">VII</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-08.json">VIII</a>
+
+            <a class="lecture"
+               href="quiz.html?bank=parasitology-virology/lecture-09.json">IX</a>
+
+            <a class="lecture comprehensive"
+               href="quiz.html?bank=parasitology-virology/comprehensive.json">
+                Comprehensive Exam
+            </a>
+
+        </div>
+    </section>
+
+
+    <footer>
+        Beyond the Imagination © 2026
+    </footer>
+
+</div>
+
+</body>
+</html>
