@@ -480,6 +480,673 @@
       ],
       "correctAnswer": "D"
     },
+    {
+      "question": "Which virus was identified as the cause of the infection in Ivanovsky's tobacco plant experiment?",
+      "options": [
+        "Herpesvirus",
+        "Tobacco mosaic virus (TMV)",
+        "Pithovirus sibericum",
+        "Rotavirus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "What term did Beijerinck use to describe the new filterable infectious agent?",
+      "options": [
+        "Viropexis",
+        "Contagium vivum fluidum",
+        "Premature capsid inclusion",
+        "Viral tropism"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus family was given as an example of a small virus measuring about 20 nm?",
+      "options": [
+        "Herpesviridae",
+        "Poxviridae",
+        "Parvoviridae",
+        "Orthomyxoviridae"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus family was described as measuring approximately 30 nm?",
+      "options": [
+        "Picornaviridae",
+        "Herpesviridae",
+        "Poxviridae",
+        "Bunyaviruses"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which virus family was given as an example of a medium-sized virus measuring about 150–200 nm?",
+      "options": [
+        "Parvoviridae",
+        "Picornaviridae",
+        "Herpesviridae",
+        "Poxviridae"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus family was given as an example of a large virus measuring approximately 250–400 nm?",
+      "options": [
+        "Poxviridae",
+        "Herpesviridae",
+        "Picornaviridae",
+        "Orthomyxoviridae"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which virus was given as an example of a very large (giant) virus measuring about 1500 nm?",
+      "options": [
+        "HIV",
+        "Pithovirus sibericum",
+        "Rotavirus",
+        "Tobacco mosaic virus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus family was specifically mentioned as an example of helical viral symmetry?",
+      "options": [
+        "Herpesviridae",
+        "Poxviridae",
+        "Orthomyxoviridae",
+        "Parvoviridae"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus was given as an example of complex viral symmetry?",
+      "options": [
+        "Poxvirus",
+        "Rotavirus",
+        "Herpesvirus",
+        "Orthomyxovirus"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which other infectious particle was mentioned alongside poxvirus as an example of complex symmetry?",
+      "options": [
+        "Bacteriophage",
+        "HIV",
+        "Rotavirus",
+        "Coronavirus"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which enzyme is specifically mentioned in the lecture as being carried by HIV?",
+      "options": [
+        "DNA-dependent RNA polymerase",
+        "Reverse transcriptase",
+        "Catalase",
+        "DNA ligase"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus is described in the lecture as a defective virus that requires another virus for replication?",
+      "options": [
+        "Hepatitis D virus (HDV)",
+        "HIV",
+        "Rotavirus",
+        "Tobacco mosaic virus"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which virus acts as the helper virus required for replication of hepatitis D virus (HDV)?",
+      "options": [
+        "HIV",
+        "Herpesvirus",
+        "Hepatitis B virus (HBV)",
+        "Rotavirus"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus was described as unable to survive longer than about 8 hours on hard dry surfaces?",
+      "options": [
+        "Herpesvirus",
+        "Rotavirus",
+        "HIV",
+        "Poxvirus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus was described as being able to survive for up to 8 weeks on hard dry surfaces?",
+      "options": [
+        "Rotavirus",
+        "Herpesvirus",
+        "HIV",
+        "Picornavirus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which group was specifically associated with acquiring the viral envelope from the plasma membrane?",
+      "options": [
+        "Coronaviruses only",
+        "Bunyaviruses and flaviviruses",
+        "Orthomyxoviruses and retroviruses such as HIV",
+        "Herpesviruses only"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus group was given as an example of acquiring its envelope from the endoplasmic reticulum?",
+      "options": [
+        "Coronaviruses",
+        "Retroviruses",
+        "Orthomyxoviruses",
+        "Herpesviruses"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which groups were associated with acquiring their envelopes from the Golgi apparatus membrane?",
+      "options": [
+        "Herpesviruses and retroviruses",
+        "Bunyaviruses and flaviviruses",
+        "Coronaviruses and HIV",
+        "Parvoviruses and picornaviruses"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus group was given as an example of acquiring its envelope from the nuclear membrane?",
+      "options": [
+        "Herpesviruses",
+        "Coronaviruses",
+        "Bunyaviruses",
+        "Retroviruses"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which statement correctly distinguishes the two subviral agents described in the lecture?",
+      "options": [
+        "Prions contain circular RNA, while viroids contain protein only",
+        "Prions are misfolded proteins without detected nucleic acid, while viroids are short circular ssRNA without a protein coat",
+        "Both prions and viroids contain DNA",
+        "Both prions and viroids require a capsid for infectivity"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which enzyme is carried by retroviruses as a virion component?",
+      "options": [
+        "Reverse transcriptase",
+        "Neuraminidase",
+        "RNA polymerase",
+        "DNA polymerase"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which sequence correctly represents the six replication steps?",
+      "options": [
+        "Penetration → adsorption → synthesis → release → assembly → uncoating",
+        "Adsorption → penetration → uncoating → synthesis → assembly → release",
+        "Adsorption → uncoating → penetration → assembly → synthesis → release",
+        "Synthesis → adsorption → penetration → assembly → release → uncoating"
+      ],
+      "correctAnswer": "B"
+    }
+  ]
+        }        "Co-evolution hypothesis",
+        "Tropism hypothesis",
+        "Regressive hypothesis"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "Which hypothesis proposes that mobile genetic elements escaped from cells after acquiring viral genes?",
+      "options": [
+        "Escape hypothesis",
+        "Regressive hypothesis",
+        "Co-evolution hypothesis",
+        "Capsid hypothesis"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "What is the current conclusion about the origin of viruses in the lecture?",
+      "options": [
+        "The co-evolution theory is proven",
+        "No clear explanation for viral origin has been confirmed",
+        "Viruses definitely evolved from bacteria",
+        "All viruses have one common origin"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which is NOT one of the lecture's viral classification criteria?",
+      "options": [
+        "Genome",
+        "Size",
+        "Antibiotic sensitivity",
+        "Target tissue"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which method estimates viral size from passage through graded membrane pores?",
+      "options": [
+        "UV irradiation",
+        "Electron microscopy",
+        "Ultracentrifugation",
+        "Ultrafiltration"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "Which method estimates viral size from sedimentation rate?",
+      "options": [
+        "Ultracentrifugation",
+        "Tissue tropism",
+        "Electron microscopy",
+        "Ultrafiltration"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which method directly determines viral size?",
+      "options": [
+        "Ultrafiltration",
+        "Electron microscopy",
+        "Ultracentrifugation",
+        "Chemical testing"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "A 1500-nm virus belongs to which size category?",
+      "options": [
+        "Small",
+        "Medium",
+        "Very large (giant) virus",
+        "Very large (giant)"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus was given as an example of a very large virus?",
+      "options": [
+        "Herpesviridae",
+        "Parvoviridae",
+        "Picornaviridae",
+        "Pithovirus sibericum"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "Which viral component is present only in some viruses?",
+      "options": [
+        "Envelope",
+        "Capsid",
+        "Matrix protein",
+        "Genome"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "What is the nucleocapsid?",
+      "options": [
+        "Envelope plus matrix",
+        "Capsid plus nucleic acid core",
+        "Genome plus ribosomes",
+        "Capsid plus envelope"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "What does matrix protein connect in an enveloped virus?",
+      "options": [
+        "Genome and envelope",
+        "Capsid and genome",
+        "Nucleocapsid and inner side of envelope",
+        "Host nucleus and capsid"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Why may a virus carry enzymes inside its virion?",
+      "options": [
+        "The host may not provide a required enzyme",
+        "All viruses lack ribosomes",
+        "Viruses always need ATP inside the virion",
+        "The host may not provide an enzyme required by the virus"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "What does a viral genome contain?",
+      "options": [
+        "Either DNA or RNA, not both",
+        "Only DNA",
+        "Only RNA",
+        "DNA and RNA together"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which genome can be single- or double-stranded according to the lecture?",
+      "options": [
+        "Only DNA",
+        "Both DNA and RNA genomes",
+        "Only RNA",
+        "Neither"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "What does positive-sense RNA mean?",
+      "options": [
+        "It acts directly as mRNA",
+        "It must enter the nucleus",
+        "Be converted into DNA",
+        "It is always double-stranded"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "What must negative-sense RNA do before translation?",
+      "options": [
+        "It is translated immediately",
+        "It is destroyed",
+        "It serves as a template for mRNA",
+        "Serve as a template for mRNA synthesis"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "What is the main function of the viral genome?",
+      "options": [
+        "Coding for virus-specific macromolecules",
+        "Capsid assembly only",
+        "ATP production",
+        "Host-cell division"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "What is the capsid?",
+      "options": [
+        "Lipid membrane",
+        "An impermeable protein shell around viral nucleic acid",
+        "RNA enzyme",
+        "Host receptor"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "What are capsomers?",
+      "options": [
+        "Lipid molecules",
+        "Host receptors",
+        "Protein subunits composed of polypeptide molecules",
+        "Viral genomes"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which is NOT a listed capsid function?",
+      "options": [
+        "Determination of antigenic characteristics",
+        "Protection from nucleases",
+        "Delivery of nucleic acid",
+        "ATP synthesis"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "What does viral symmetry describe?",
+      "options": [
+        "Capsid morphology based on capsomer arrangement",
+        "Host age",
+        "Viral temperature",
+        "Genome length only"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which set contains all three viral symmetry types?",
+      "options": [
+        "Cubic, spherical, linear",
+        "Icosahedral, helical, complex",
+        "Helical, circular, segmented",
+        "Complex, spherical, nuclear"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "How many equilateral triangles form the icosahedral arrangement described?",
+      "options": [
+        "Twelve",
+        "Thirty",
+        "Twenty",
+        "Sixty"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "In the lecture, protein subunits at the angles of triangular capsomers are called what?",
+      "options": [
+        "Hexamers",
+        "Peplomers",
+        "Polymers",
+        "Pentamers"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "How are capsomers and genome arranged in helical symmetry?",
+      "options": [
+        "Twisted together into a spiral tube",
+        "Separate from the genome",
+        "Located only in the nucleus",
+        "Absent from RNA viruses"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which was given as an example of complex symmetry?",
+      "options": [
+        "Picornavirus",
+        "Poxvirus",
+        "Herpesvirus",
+        "Orthomyxovirus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "What is the lipid portion of a viral envelope mainly derived from?",
+      "options": [
+        "Viral capsid",
+        "Viral RNA",
+        "Host cell membrane phospholipids",
+        "Host DNA"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "What are envelope spikes also called?",
+      "options": [
+        "Capsomers",
+        "Matrix proteins",
+        "Nucleotides",
+        "Peplomers"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "Which envelope function is directly related to specific receptor binding?",
+      "options": [
+        "Determination of viral tropism",
+        "ATP production",
+        "Genome transcription",
+        "Capsid digestion"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which is another function of the viral envelope?",
+      "options": [
+        "Genome replication",
+        "Evasion of the host immune system",
+        "ATP synthesis",
+        "Ribosome formation"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which set contains possible sources of viral envelopes?",
+      "options": [
+        "Mitochondria only",
+        "Plasma membrane only",
+        "Plasma, nuclear, Golgi and ER membranes",
+        "Nucleus only"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Most viruses can be inactivated by heating at 56 °C for about:",
+      "options": [
+        "Few seconds",
+        "8 weeks",
+        "8 hours",
+        "30 minutes"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "Most viruses are stable at approximately:",
+      "options": [
+        "-40 to -70 °C",
+        "0 to -10 °C",
+        "+56 °C",
+        "100 °C"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which virus was described as surviving no longer than 8 hours on hard dry surfaces?",
+      "options": [
+        "Herpesvirus",
+        "Rotavirus",
+        "Poxvirus",
+        "HIV"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which genome types are less susceptible to UVGI than ssDNA and ssRNA?",
+      "options": [
+        "dsDNA and ssRNA",
+        "ssDNA and ssRNA",
+        "dsDNA and dsRNA",
+        "ssDNA and dsRNA"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which statement about ether/chloroform is correct?",
+      "options": [
+        "Non-enveloped viruses are sensitive",
+        "Both are always resistant",
+        "Only RNA viruses are sensitive",
+        "Enveloped viruses are sensitive; non-enveloped viruses are resistant"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "Why is glycerol added to viral suspension?",
+      "options": [
+        "To prevent bacterial contamination",
+        "Destroy viral genomes",
+        "Increase tropism",
+        "Produce ATP"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "What is viral tropism?",
+      "options": [
+        "Ability to survive drying",
+        "Specific infection of a cell, tissue or host that supports replication",
+        "Ability to form capsids",
+        "Resistance to UV"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which two factors affect viral tropism?",
+      "options": [
+        "Envelope and matrix",
+        "Specific receptors and transcription factors",
+        "Specific receptors and required transcription factors",
+        "Genome size and color"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which host-cell resource provides the protein-synthesizing machinery?",
+      "options": [
+        "Capsomers",
+        "Chamberland filters",
+        "Peplomers",
+        "Ribosomes"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "question": "Which combination must the host cell provide for viral replication?",
+      "options": [
+        "Ribosomes, ATP, amino acids and nucleotides",
+        "Only ATP",
+        "Only host DNA",
+        "Capsid, envelope and matrix"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which molecule is crucial for redirecting the host cell toward viral protein production?",
+      "options": [
+        "Host DNA",
+        "Viral mRNA",
+        "ATP",
+        "Capsid"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Viral mRNA can be synthesized by transcription of which genome types?",
+      "options": [
+        "Double-stranded RNA only",
+        "Positive-sense RNA only",
+        "DNA or negative-sense RNA",
+        "Circular DNA only"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which is a structural viral protein?",
+      "options": [
+        "Reverse transcriptase",
+        "RNA-dependent RNA polymerase",
+        "Regulatory protein",
+        "Capsid protein"
+      ],
+      "correctAnswer": "D"
+    },
         {
       "question": "Which virus was identified as the cause of the infection in Ivanovsky's tobacco plant experiment?",
       "options": [
