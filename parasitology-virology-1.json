@@ -480,6 +480,206 @@
       ],
       "correctAnswer": "D"
     },
+        {
+      "question": "Which virus was identified as the cause of the infection in Ivanovsky's tobacco plant experiment?",
+      "options": [
+        "Herpesvirus",
+        "Tobacco mosaic virus (TMV)",
+        "Pithovirus sibericum",
+        "Rotavirus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "What term did Beijerinck use to describe the new filterable infectious agent?",
+      "options": [
+        "Viropexis",
+        "Contagium vivum fluidum",
+        "Premature capsid inclusion",
+        "Viral tropism"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus family was given as an example of a small virus measuring about 20 nm?",
+      "options": [
+        "Herpesviridae",
+        "Poxviridae",
+        "Parvoviridae",
+        "Orthomyxoviridae"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus family was described as measuring approximately 30 nm?",
+      "options": [
+        "Picornaviridae",
+        "Herpesviridae",
+        "Poxviridae",
+        "Bunyaviruses"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which virus family was given as an example of a medium-sized virus measuring about 150–200 nm?",
+      "options": [
+        "Parvoviridae",
+        "Picornaviridae",
+        "Herpesviridae",
+        "Poxviridae"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus family was given as an example of a large virus measuring approximately 250–400 nm?",
+      "options": [
+        "Poxviridae",
+        "Herpesviridae",
+        "Picornaviridae",
+        "Orthomyxoviridae"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which virus was given as an example of a very large (giant) virus measuring about 1500 nm?",
+      "options": [
+        "HIV",
+        "Pithovirus sibericum",
+        "Rotavirus",
+        "Tobacco mosaic virus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus family was specifically mentioned as an example of helical viral symmetry?",
+      "options": [
+        "Herpesviridae",
+        "Poxviridae",
+        "Orthomyxoviridae",
+        "Parvoviridae"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus was given as an example of complex viral symmetry?",
+      "options": [
+        "Poxvirus",
+        "Rotavirus",
+        "Herpesvirus",
+        "Orthomyxovirus"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which other infectious particle was mentioned alongside poxvirus as an example of complex symmetry?",
+      "options": [
+        "Bacteriophage",
+        "HIV",
+        "Rotavirus",
+        "Coronavirus"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which enzyme is specifically mentioned in the lecture as being carried by HIV?",
+      "options": [
+        "DNA-dependent RNA polymerase",
+        "Reverse transcriptase",
+        "Catalase",
+        "DNA ligase"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus is described in the lecture as a defective virus that requires another virus for replication?",
+      "options": [
+        "Hepatitis D virus (HDV)",
+        "HIV",
+        "Rotavirus",
+        "Tobacco mosaic virus"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which virus acts as the helper virus required for replication of hepatitis D virus (HDV)?",
+      "options": [
+        "HIV",
+        "Herpesvirus",
+        "Hepatitis B virus (HBV)",
+        "Rotavirus"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus was described as unable to survive longer than about 8 hours on hard dry surfaces?",
+      "options": [
+        "Herpesvirus",
+        "Rotavirus",
+        "HIV",
+        "Poxvirus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus was described as being able to survive for up to 8 weeks on hard dry surfaces?",
+      "options": [
+        "Rotavirus",
+        "Herpesvirus",
+        "HIV",
+        "Picornavirus"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which group was specifically associated with acquiring the viral envelope from the plasma membrane?",
+      "options": [
+        "Coronaviruses only",
+        "Bunyaviruses and flaviviruses",
+        "Orthomyxoviruses and retroviruses such as HIV",
+        "Herpesviruses only"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "question": "Which virus group was given as an example of acquiring its envelope from the endoplasmic reticulum?",
+      "options": [
+        "Coronaviruses",
+        "Retroviruses",
+        "Orthomyxoviruses",
+        "Herpesviruses"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which groups were associated with acquiring their envelopes from the Golgi apparatus membrane?",
+      "options": [
+        "Herpesviruses and retroviruses",
+        "Bunyaviruses and flaviviruses",
+        "Coronaviruses and HIV",
+        "Parvoviruses and picornaviruses"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "question": "Which virus group was given as an example of acquiring its envelope from the nuclear membrane?",
+      "options": [
+        "Herpesviruses",
+        "Coronaviruses",
+        "Bunyaviruses",
+        "Retroviruses"
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "question": "Which statement correctly distinguishes the two subviral agents described in the lecture?",
+      "options": [
+        "Prions contain circular RNA, while viroids contain protein only",
+        "Prions are misfolded proteins without detected nucleic acid, while viroids are short circular ssRNA without a protein coat",
+        "Both prions and viroids contain DNA",
+        "Both prions and viroids require a capsid for infectivity"
+      ],
+      "correctAnswer": "B"
+    }
     {
       "question": "Which enzyme is carried by retroviruses as a virion component?",
       "options": [
