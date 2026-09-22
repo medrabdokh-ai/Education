@@ -484,9 +484,9 @@
       "question": "Which enzyme is carried by retroviruses as a virion component?",
       "options": [
         "Reverse transcriptase",
-        "Penetration → adsorption → synthesis → release → assembly → uncoating",
-        "Adsorption → uncoating → penetration → assembly → synthesis → release",
-        "Synthesis → adsorption → penetration → assembly → release → uncoating"
+        "Neuraminidase",
+        "RNA polymerase",
+        "DNA polymerase"
       ],
       "correctAnswer": "A"
     },
