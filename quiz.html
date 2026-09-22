@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Beyond the Imagination</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .header p {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 16px;
+    }
+
+    .quiz-card {
+      background: white;
+      border-radius: 18px;
+      padding: 25px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .progress {
+      color: #6b7280;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 21px;
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+
+    .option {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 15px;
+      margin-bottom: 12px;
+      border: 2px solid #e5e7eb;
+      background: white;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    .option:hover {
+      border-color: #6366f1;
+      background: #f8f8ff;
+    }
+
+    .option.selected {
+      border-color: #6366f1;
+      background: #eef2ff;
+    }
+
+    .option.correct {
+      border-color: #16a34a;
+      background: #dcfce7;
+    }
+
+    .option.wrong {
+      border-color: #dc2626;
+      background: #fee2e2;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 10px;
+      padding: 13px 20px;
+      font-size: 15px;
+      cursor: pointer;
+      background: #6366f1;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn:disabled {
+      background: #d1d5db;
+      cursor: not-allowed;
+    }
+
+    .result {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .result h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .result p {
+      color: #6b7280;
+      margin-bottom: 25px;
+    }
+
+    .loading,
+    .error {
+      text-align: center;
+      padding: 40px 10px;
+    }
+
+    .error {
+      color: #dc2626;
+    }
+
+    @media (max-width: 600px) {
+      .quiz-card {
+        padding: 20px;
+      }
+
+      .question {
+        font-size: 18px;
+      }
+
+      .option {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>Beyond the Imagination</h1>
+    <p id="examTitle">Loading exam...</p>
+  </div>
+
+  <div class="container">
+    <div class="quiz-card">
+
+      <div id="loading" class="loading">
+        Loading questions...
+      </div>
+
+      <div id="quiz" style="display:none;">
+
+        <div class="progress" id="progress"></div>
+
+        <div class="question" id="question"></div>
+
+        <div id="options"></div>
+
+        <div class="buttons">
+          <button class="btn" id="previousBtn" onclick="previousQuestion()">
+            Previous
+          </button>
+
+          <button class="btn" id="nextBtn" onclick="nextQuestion()">
+            Next
+          </button>
+        </div>
+
+      </div>
+
+      <div id="result" class="result" style="display:none;">
+        <h2>Exam Completed</h2>
+
+        <p id="score"></p>
+
+        <button class="btn" onclick="restartQuiz()">
+          Try Again
+        </button>
+      </div>
+
+      <div id="error" class="error" style="display:none;"></div>
+
+    </div>
+  </div>
+
+
+<script>
+
+  let questions = [];
+  let currentQuestion = 0;
+  let answers = [];
+
+  // Get the JSON filename from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const bank = urlParams.get("bank");
+
+
+  // Load the JSON file
+  async function loadQuiz() {
+
+    if (!bank) {
+      showError("No question bank was specified.");
+      return;
+    }
+
+    try {
+
+      const response = await fetch(bank);
+
+      if (!response.ok) {
+        throw new Error("Question bank not found.");
+      }
+
+      const data = await response.json();
+
+      // Accept either:
+      // [ {...}, {...} ]
+      // OR
+      // { "questions": [ {...}, {...} ] }
+
+      if (Array.isArray(data)) {
+        questions = data;
+      } else if (Array.isArray(data.questions)) {
+        questions = data.questions;
+      } else {
+        throw new Error("Invalid JSON question format.");
+      }
+
+      if (questions.length === 0) {
+        throw new Error("This exam has no questions.");
+      }
+
+      answers = new Array(questions.length).fill(null);
+
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("quiz").style.display = "block";
+
+      document.getElementById("examTitle").textContent =
+        formatExamName(bank);
+
+      showQuestion();
+
+    } catch (error) {
+
+      showError(
+        "Could not load the exam. Check that the JSON file exists and the filename is correct."
+      );
+
+      console.error(error);
+    }
+  }
+
+
+  // Convert filename into a readable title
+  function formatExamName(path) {
+
+    let name = path.split("/").pop();
+
+    name = name.replace(".json", "");
+    name = name.replace(/-/g, " ");
+
+    return name
+      .replace(/\b\w/g, letter => letter.toUpperCase());
+  }
+
+
+  // Show current question
+  function showQuestion() {
+
+    const question = questions[currentQuestion];
+
+    document.getElementById("progress").textContent =
+      `Question ${currentQuestion + 1} of ${questions.length}`;
+
+    document.getElementById("question").textContent =
+      question.question;
+
+    const optionsContainer =
+      document.getElementById("options");
+
+    optionsContainer.innerHTML = "";
+
+
+    question.options.forEach((option, index) => {
+
+      const button = document.createElement("button");
+
+      button.className = "option";
+
+      button.textContent =
+        `${String.fromCharCode(65 + index)}. ${getOptionText(option)}`;
+
+      button.onclick = () => selectOption(index);
+
+      if (answers[currentQuestion] === index) {
+        button.classList.add("selected");
+      }
+
+      optionsContainer.appendChild(button);
+
+    });
+
+
+    document.getElementById("previousBtn").disabled =
+      currentQuestion === 0;
+
+    document.getElementById("nextBtn").textContent =
+      currentQuestion === questions.length - 1
+        ? "Finish"
+        : "Next";
+  }
+
+
+  // Support different JSON option formats
+  function getOptionText(option) {
+
+    if (typeof option === "string") {
+      return option;
+    }
+
+    if (option.text) {
+      return option.text;
+    }
+
+    if (option.label) {
+      return option.label;
+    }
+
+    if (option.value) {
+      return option.value;
+    }
+
+    return "";
+  }
+
+
+  // Select an answer
+  function selectOption(index) {
+
+    answers[currentQuestion] = index;
+
+    const options =
+      document.querySelectorAll(".option");
+
+    options.forEach(option => {
+      option.classList.remove("selected");
+    });
+
+    options[index].classList.add("selected");
+  }
+
+
+  // Next question
+  function nextQuestion() {
+
+    if (answers[currentQuestion] === null) {
+      alert("Please choose an answer first.");
+      return;
+    }
+
+    if (currentQuestion < questions.length - 1) {
+
+      currentQuestion++;
+
+      showQuestion();
+
+    } else {
+
+      finishQuiz();
+
+    }
+  }
+
+
+  // Previous question
+  function previousQuestion() {
+
+    if (currentQuestion > 0) {
+
+      currentQuestion--;
+
+      showQuestion();
+
+    }
+  }
+
+
+  // Finish exam
+  function finishQuiz() {
+
+    let scoreValue = 0;
+
+    questions.forEach((question, index) => {
+
+      const correctAnswer =
+        getCorrectAnswer(question);
+
+      const userAnswer =
+        answers[index];
+
+      if (isCorrectAnswer(question, userAnswer, correctAnswer)) {
+        scoreValue++;
+      }
+
+    });
+
+
+    document.getElementById("quiz").style.display = "none";
+
+    document.getElementById("result").style.display = "block";
+
+    document.getElementById("score").textContent =
+      `Your score: ${scoreValue} / ${questions.length}`;
+  }
+
+
+  // Get correct answer
+  function getCorrectAnswer(question) {
+
+    if (question.correctAnswer !== undefined) {
+      return question.correctAnswer;
+    }
+
+    if (question.answer !== undefined) {
+      return question.answer;
+    }
+
+    if (question.correct !== undefined) {
+      return question.correct;
+    }
+
+    if (question.correctIndex !== undefined) {
+      return question.correctIndex;
+    }
+
+    return null;
+  }
+
+
+  // Check answer
+  function isCorrectAnswer(question, userIndex, correctAnswer) {
+
+    if (correctAnswer === null) {
+      return false;
+    }
+
+    const selectedOption =
+      question.options[userIndex];
+
+    const selectedText =
+      getOptionText(selectedOption);
+
+    // If correct answer is a number
+    if (typeof correctAnswer === "number") {
+
+      // Could be option index
+      if (correctAnswer === userIndex) {
+        return true;
+      }
+
+      // Could be option number starting from 1
+      if (correctAnswer === userIndex + 1) {
+        return true;
+      }
+    }
+
+
+    // If correct answer is a letter
+    if (typeof correctAnswer === "string") {
+
+      const letter =
+        String.fromCharCode(65 + userIndex);
+
+      if (correctAnswer.toUpperCase() === letter) {
+        return true;
+      }
+
+      if (correctAnswer === selectedText) {
+        return true;
+      }
+    }
+
+
+    return false;
+  }
+
+
+  // Restart exam
+  function restartQuiz() {
+
+    currentQuestion = 0;
+
+    answers = new Array(questions.length).fill(null);
+
+    document.getElementById("result").style.display = "none";
+
+    document.getElementById("quiz").style.display = "block";
+
+    showQuestion();
+  }
+
+
+  // Show error
+  function showError(message) {
+
+    document.getElementById("loading").style.display = "none";
+
+    document.getElementById("quiz").style.display = "none";
+
+    document.getElementById("error").style.display = "block";
+
+    document.getElementById("error").textContent = message;
+  }
+
+
+  // Start
+  loadQuiz();
+
+</script>
+
+</body>
+</html>
